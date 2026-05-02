@@ -1,6 +1,7 @@
 <html manifest="Cache.manifest">
 <head>
 <style>
+<style>
 @keyframes shake {
   0% { transform: translate(1px, 1px) rotate(0deg); }
   10% { transform: translate(-1px, -2px) rotate(-1deg); }
@@ -18,21 +19,29 @@
 /* The Glow and Shake Class */
 .glow-shake {
     display: inline-block;
-    color: #00ffff; /* Change this to your favorite color hex code */
-    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 4px 4px 4px black;
+    color: #ffd700; /* I changed this to GOLD, change it to whatever you like! */
+    text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 4px 4px 4px black;
     animation: shake 0.5s infinite;
 }
-    html, body{
-margin:auto;
-font-family:sans-serif;
-font-size:20px;
-font-weight:lighter;
-text-align: center;
-color:#FFFFFF;
-background-image: url("scorpion2.png");
-background-size:cover;
-overflow: hidden;
+
+/* --- PASTE THIS NEW LOGO CODE BELOW --- */
+
+.top-right-logo {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 100px; /* Size of your scorpion logo */
+    z-index: 9999;
+    filter: drop-shadow(0 0 15px white); /* This makes the logo glow white */
+    animation: logoPulse 2s infinite ease-in-out;
 }
+
+@keyframes logoPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* --- END OF NEW LOGO CODE --- */
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
