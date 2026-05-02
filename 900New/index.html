@@ -1,5 +1,9 @@
 <html manifest="Cache.manifest">
 <head>
+<body> <!-- THIS IS THE OPENING TAG YOU WERE MISSING -->
+ <div class="logo-container">
+ <img src="logo.png" class="top-left-logo">
+ </div>
 <style>
 @keyframes shake {
   0% { transform: translate(1px, 1px) rotate(0deg); }
@@ -25,15 +29,16 @@
 
 /* --- PASTE THIS NEW LOGO CODE BELOW --- */
 
-.top-right-logo {
+.top-left-logo {
     position: fixed;
     top: 20px;
-    right: 20px;
-    width: 100px; /* Size of your scorpion logo */
+    left: 20px;       /* Changed from right to left */
+    width: 150px;      /* Increased from 100px to 150px */
     z-index: 9999;
-    filter: drop-shadow(0 0 15px white); /* This makes the logo glow white */
+    filter: drop-shadow(0 0 15px white);
     animation: logoPulse 2s infinite ease-in-out;
 }
+
 
 @keyframes logoPulse {
     0%, 100% { transform: scale(1); }
@@ -54,6 +59,48 @@
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
+	/* Container for the logo to hold the light effect */
+.logo-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 150px; /* Bigger size */
+    height: 150px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* The actual Logo */
+.top-left-logo {
+    width: 130px; /* alittle smaller than container */
+    z-index: 10001;
+    filter: drop-shadow(0 0 10px white);
+}
+.logo-container::before {
+    content: "";
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border: 3px solid transparent;
+    border-top: 3px solid #ffd700; /* Gold light */
+    border-right: 3px solid #ffd700;
+    border-radius: 50%;
+    animation: spin-light 1.5s linear infinite;
+    box-shadow: 0 0 15px #ffd700;
+}
+
+@keyframes spin-light {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes logoPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
  .content {
   width:90%;
   height:15%;
@@ -1225,7 +1272,11 @@ bzip2.decompress = function(bits, size, len) {
   return output;
 };
 </script>
-<img src="logo.png" class="top-right-logo">
-</body>
 
+<div class="logo-container">
+    <img src="logo.png" class="top-left-logo">
+</div>
+
+</body>
 </html>
+
