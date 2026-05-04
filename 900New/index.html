@@ -125,43 +125,50 @@
 
 /* Red Ahmed Tag (Hidden/Small in your specific image ref) */
 /* Ahmed ESSAM - Moved to the middle of the box */
+/* 1. Force the Header to Cyan */
+.fire-frost {
+    font-size: 45px;
+    font-weight: 900;
+    color: #00ffff !important; /* Force Cyan */
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 15px;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #000, 0 0 30px #00ffff;
+    animation: firefrost-flicker 2s infinite alternate;
+}
+
+/* 2. Ahmed ESSAM - Small Centered Pill */
 .fire-red {
     color: white;
     font-size: 24px;
     font-weight: bold;
-    display: block;
-    margin-top: 5px;
-    /* Increase this % to move him further right/middle */
-    margin-left: 40%; 
-    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+    padding: 5px 25px;
+    background: rgba(180, 0, 0, 0.8);
+    border: 2px solid #ff0000;
+    border-radius: 20px;
+    box-shadow: 0 0 15px #ff0000;
+    display: inline-block; /* Keeps it from stretching */
+    margin: 10px auto;
     animation: red-flicker 1.5s infinite alternate;
 }
 
-/* Dareen & Omar & jojo - Moved to the middle of the box */
+/* 3. Special Thanks Glow */
 .super-glow {
     font-size: 32px;
     font-weight: bold;
-    color: white;
-    display: block;
-    margin-top: 10px;
-    /* Increase this % to move them further right/middle */
-    margin-left: 35%; 
-    text-shadow: 0 0 15px white, 0 0 25px #ffcc00;
-    animation: rainbow-glow 3s linear infinite;
-}
-
-/* Ensure the Scorpio name stays next to the first label */
-.hue {
-    color: white;
-    font-size: 22px;
-    padding: 2px 15px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid #777;
-    border-radius: 15px;
+    color: #fff;
     display: inline-block;
-    box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    margin-top: 10px;
+    text-shadow: 0 0 15px #00ffff, 0 0 30px #ffffff;
 }
 
+/* 4. Fix for the Labels and Dots */
+.yellow-label-inline {
+    color: yellow;
+    font-weight: bold;
+    font-size: 18px;
+    display: inline; /* Keeps dots on the same line */
+}
     /* Button Styling */
     button {
         background: rgba(0,0,0,0.5);
@@ -1173,20 +1180,24 @@ bzip2.decompress = function(bits, size, len) {
   return output;
 };
 </script>
-	<div class="content-box">
-    <!-- Row 1: Label + Scorpio -->
-    <div style="display: flex; align-items: center;">
-        <span class="yellow-label">Designed, Compiled by :</span>
+	<div class="content-box" style="text-align: center; padding: 20px;">
+    <!-- Row 1: Designed by -->
+    <div style="margin-bottom: 10px;">
+        <span class="yellow-label-inline">Designed, Compiled by :</span>
         <span class="hue">Scorpio</span>
     </div>
-    
-    <!-- Row 2: Ahmed in the middle -->
-    <span class="fire-red">Ahmed ESSAM</span>
-    
-    <!-- Row 3: Thanks label -->
-    <div style="margin-top: 10px;">
-        <span class="yellow-label">Super Special Thanks To :</span>
-        <!-- Row 4: Names in the middle -->
+
+    <!-- Row 2: Ahmed ESSAM Centered -->
+    <div style="display: block; text-align: center;">
+        <span class="fire-red">Ahmed ESSAM</span>
+    </div>
+
+    <div style="margin: 15px auto; width: 60%; border-top: 1px solid rgba(0,255,255,0.2);"></div>
+
+    <!-- Row 3: Thanks with dots on same line -->
+    <div>
+        <span class="yellow-label-inline">Super Special Thanks To :</span>
+        <br>
         <span class="super-glow">Dareen & Omar & jojo</span>
     </div>
 </div>
