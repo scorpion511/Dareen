@@ -4,7 +4,6 @@
 <title>SCORPION Host For PS4 505 & 672 & 702 & 75X & 900</title>
 <style type="text/css">
 html, body {
-  /* This links your background photo */
   background: url("bgg.jpg") #1A1920 no-repeat center center fixed; 
   background-size: cover;
   margin: auto;
@@ -14,18 +13,18 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Centered Cyan Black Glowing Header */
-.cyan-glow {
-    font-size: 55px;
+/* Fire and Frost Dual Glow Animation */
+.fire-frost {
+    font-size: 50px;
     font-weight: 900;
-    color: #00ffff; 
     text-transform: uppercase;
-    margin-top: 30px;
     text-align: center;
-    letter-spacing: 4px;
-    text-shadow: 0 0 10px #000, 0 0 20px #000, 0 0 30px #00ffff, 0 0 40px #00ffff;
-    animation: cyan-flicker 2s infinite alternate;
-    -webkit-animation: cyan-flicker 2s infinite alternate;
+    margin-top: 15px;
+    letter-spacing: 3px;
+    color: #fff;
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff8000, 0 0 30px #00ffff, 0 0 40px #00ffff;
+    animation: firefrost-flicker 2s infinite alternate;
+    -webkit-animation: firefrost-flicker 2s infinite alternate;
 }
 
 button {
@@ -48,25 +47,9 @@ button:hover {
     color: black;
 }
 
-#clock {
- float:right;
- margin-right:2.25%;
- margin-top: 18px;
- font-weight:bold;
- font-size:28px;
- color: white;
-}
+#clock { float:right; margin-right:2.25%; margin-top: 18px; font-weight:bold; font-size:28px; color: white; }
+#date { float:left; margin-left:1.25%; font-weight:bold; margin-top: 18px; font-size:28px; color: white; }
 
-#date {
- float:left;
- margin-left:1.25%;
- font-weight:bold;
- margin-top: 18px;
- font-size:28px;
- color: white;
-}
-
-/* Square Bottom Middle Box */
 .content-box {
     background: rgba(0, 0, 0, 0.85); 
     width: 50%;
@@ -83,59 +66,31 @@ button:hover {
 .yellow-label { color: yellow; font-weight: bold; font-size: 20px; display: block; margin-bottom: 8px;}
 
 .hue {
-    color: white; 
-    font-size: 28px; 
-    padding: 5px 25px;
-    background: rgba(0, 255, 255, 0.2); 
-    border-radius: 12px;
-    box-shadow: 0 0 20px #00ffff; 
-    display: inline-block;
+    color: white; font-size: 28px; padding: 5px 25px;
+    background: rgba(0, 255, 255, 0.2); border-radius: 12px;
+    box-shadow: 0 0 20px #00ffff; display: inline-block;
     margin-bottom: 20px;
     animation: hue-cycle 5s linear infinite;
     -webkit-animation: hue-cycle 5s linear infinite;
 }
 
 .super-glow {
-    font-size: 38px; 
-    font-weight: bold; 
-    display: inline-block;
+    font-size: 38px; font-weight: bold; display: inline-block;
     animation: rainbow-glow 3s linear infinite;
     -webkit-animation: rainbow-glow 3s linear infinite;
 }
 
-@keyframes cyan-flicker { 
-    0%, 100% { opacity: 1; text-shadow: 0 0 10px #000, 0 0 30px #00ffff; } 
-    50% { opacity: 0.8; text-shadow: 0 0 15px #000, 0 0 50px #00ffff; } 
+@-webkit-keyframes firefrost-flicker {
+    0% { text-shadow: 0 0 10px #ff0000, 0 0 20px #ff8000, 0 0 30px #00ffff; -webkit-transform: scale(1); }
+    100% { text-shadow: 0 0 15px #ff4e00, 0 0 30px #ffea00, 0 0 45px #00ffff, 0 0 60px #ffffff; -webkit-transform: scale(1.02); }
 }
 
-@keyframes hue-cycle { 
-    0% { -webkit-filter: hue-rotate(0deg); } 
-    100% { -webkit-filter: hue-rotate(360deg); } 
-}
-
-@keyframes rainbow-glow { 
-    0% { text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff; -webkit-filter: hue-rotate(0deg); } 
-    100% { text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff; -webkit-filter: hue-rotate(360deg); } 
-}
-
+@keyframes hue-cycle { 0% { -webkit-filter: hue-rotate(0deg); } 100% { -webkit-filter: hue-rotate(360deg); } }
+@keyframes rainbow-glow { 0% { text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff; filter: hue-rotate(0deg); } 100% { text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff; filter: hue-rotate(360deg); } }
 .pointer {cursor: pointer;}
 </style>
 
 <script>
-function showdate() {
-  var dt = new Date();
-  Hour= dt.getHours();
-  Minute= dt.getMinutes();
-  Day=dt.getDate();
-  Month=dt.getMonth()+1;
-  Year=dt.getFullYear();
-  if (Minute < 10) { Minute = "0" + Minute; };
-  if (Hour < 10) { Hour = "0" + Hour; };
-  document.getElementById("date").innerHTML = (Day+"/"+Month+"/"+Year);
-  document.getElementById("clock").innerHTML = (Hour+":"+Minute);
-}
-setInterval(showdate, 1000);
-<<script>
 function showdate() {
   var dt = new Date();
   var Hour = dt.getHours();
@@ -144,10 +99,9 @@ function showdate() {
   var Month = dt.getMonth() + 1;
   var Year = dt.getFullYear();
   
-  // 12-hour format logic
   var ampm = Hour >= 12 ? 'PM' : 'AM';
   Hour = Hour % 12;
-  Hour = Hour ? Hour : 12; // the hour '0' should be '12'
+  Hour = Hour ? Hour : 12; 
   
   if (Minute < 10) { Minute = "0" + Minute; };
   if (Hour < 10) { Hour = "0" + Hour; };
@@ -155,16 +109,16 @@ function showdate() {
   document.getElementById("date").innerHTML = (Day + "/" + Month + "/" + Year);
   document.getElementById("clock").innerHTML = (Hour + ":" + Minute + " " + ampm);
 }
-
-// Set to 1000ms (1 second) to be more stable on PS4
 setInterval(showdate, 1000);
 </script>
 </head>
+
 <body class="bg-darker">
-<div id="container"  style="">
-<span id="date" ></span><span id="clock" ></span><h1 style='font-size:25px;text-align:center;color:yellow;'>WELCOME TO SCORPION HACK ALL IN 1</h1>
-<h1 id=msgs2 style='font-size:25px;text-align:center;color:white;'>Status</h1>
-<div style="text-align:center"  id="MyItems">
+<div id="container">
+    <span id="date"></span><span id="clock"></span>
+    <div class="fire-frost">Welcome to Scorpion Hack All In 1</div>
+    <h1 id="msgs2" style='font-size:25px;text-align:center;color:white;text-shadow: 2px 2px 4px black;'>Status</h1>
+    <div style="text-align:center" id="MyItems">
 <a href="copych/index.html"><button style='width: 200px;height: 40px;font-size:22px;text-align:center;color:yellow' class="pointer" onMouseOver="msgs2.innerHTML='Copy Cheat For 505 & 672 & 702 & 755 & 900'"; onmouseout="msgs2.innerHTML='Status'"  type="button"><B>Copy Cheat </B></button></a>
 <a href="https://karo218.ir/espweb/index.html"><button style='width: 200px;height: 40px;font-size:22px;text-align:center;color:green' class="pointer" onMouseOver="msgs2.innerHTML='SCORPION WEB ESP For 505 & 672 & 702 & 755 & 900'"; onmouseout="msgs2.innerHTML='Status'"  type="button"><B>WEB ESP </B></button></a>
 <a href="binloader/index.html"><button style='width: 200px;height: 40px;font-size:22px;text-align:center;color:yellow' class="pointer" onMouseOver="msgs2.innerHTML='Binloader For 505 & 672 & 702 & 755 & 900'"; onmouseout="msgs2.innerHTML='Status'"  type="button"><B>Binloader </B></button></a><br>
