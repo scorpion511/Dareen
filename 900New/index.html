@@ -29,6 +29,24 @@
         animation: firefrost-flicker 2s infinite alternate;
         -webkit-animation: firefrost-flicker 2s infinite alternate;
     }
+	.fire-red {
+    color: white;
+    font-size: 28px; /* Same size as Scorpio */
+    padding: 5px 20px;
+    margin-top: 10px; /* Space between Scorpio and Ahmed */
+    background: rgba(255, 0, 0, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 0 20px #ff0000;
+    display: inline-block;
+    /* Red Fire Flicker Animation */
+    animation: red-flicker 1.5s infinite alternate;
+    -webkit-animation: red-flicker 1.5s infinite alternate;
+}
+
+@-webkit-keyframes red-flicker {
+    0% { text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000; -webkit-transform: scale(1); }
+    100% { text-shadow: 0 0 20px #ff0000, 0 0 40px #ff4e00; -webkit-transform: scale(1.05); }
+}
 
     /* Original Logo Container with Gold Spin Effect */
     .logo-container {
@@ -1123,7 +1141,18 @@ bzip2.decompress = function(bits, size, len) {
   return output;
 };
 </script>
-
+	<div class="content-box">
+    <span class="yellow-label">Designed, Compiled by :</span>
+    <span class="hue">Scorpio</span>
+    <br> <!-- Moves Ahmed to the next line -->
+    <span class="fire-red">Ahmed ESSAM</span>
+    
+    <div style="margin: 20px auto; width: 50%; border-top: 1px solid rgba(0,255,255,0.3);"></div>
+    
+    <span class="yellow-label">Super Special Thanks To :</span>
+    <br>
+    <span class="super-glow">Dareen & Omar & jojo</span>
+</div>
 <div class="logo-container">
     <img src="logo.png" class="top-left-logo">
 </div>
