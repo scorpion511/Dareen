@@ -86,23 +86,18 @@
     /* Thin Bottom Bar matching your image */
 .content-box {
     background: rgba(0, 0, 0, 0.85); 
-    width: 90%; /* Wide bar as seen in image */
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 15px 30px; /* Thinner padding */
+    width: 60%; /* Made it smaller to look better at the top */
+    max-width: 800px;
+    margin: 20px auto; /* Centers it and adds space above */
+    padding: 15px 30px; 
     border-radius: 20px;
     border: 2px solid #00ffff;
     box-shadow: 0 0 20px #00ffff;
     
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    
-    text-align: left; /* Aligned left like the image */
+    /* FIX: Changed from absolute to relative to move it UP */
+    position: relative; 
+    text-align: center; /* Centered text for the top position */
 }
-
 .yellow-label { 
     color: yellow; 
     font-weight: bold; 
@@ -842,10 +837,20 @@ Tools.style.display = "none";
     <!-- Centered Cyan Title -->
     <div class="fire-frost" style="color:#00ffff !important; text-align:center;">WELCOME TO SCORPION HACK ALL IN 1</div>
    <!-- Status Text -->
-<h1 id="progress" style='font-size:25px;text-align:center;text-shadow: 4px 4px 4px black;color:white;'>
+<h1 id="progress" style='font-size:25px;text-align:center;color:white;'>
     Jailbreaking... Wait.. SMILE Dareen&Omar ALL SET
 </h1>
+
+<!-- The box is now here, right under the status -->
+<div class="content-box">
+    <span class="yellow-label">Hacking In Progress :</span>
+    <br>
+    <span class="hue glow-shake" style="display:inline-block; margin-top:10px;">Please WAIT</span>
+</div>
+
 <div id="all" style="text-align:center; display:none;">
+    <!-- Buttons follow here -->
+
 <button id="button-Payload" onMouseOver="progress.innerHTML='GoldHen v2.1.2 by SISTR0 for PS4 9.00 Fw'" onmouseout="progress.innerHTML='Status'" type="button" onclick="goldhen212()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:#CEC52A' > GoldHenV2.1.2</button>
 <button id="button-Payload" onMouseOver="progress.innerHTML='GoldHen v2.2.4 by SISTR0 for PS4 9.00 Fw'" onmouseout="progress.innerHTML='Status'" type="button" onclick="goldhen224()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:#CEC52A' > GoldHenV2.2.4</button>
 <button id="button-Payload" onMouseOver="progress.innerHTML='GoldHen v2.3 by SISTR0 for PS4 9.00 Fw'" onmouseout="progress.innerHTML='Status'" type="button" onclick="goldhen23()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:#CEC52A' > GoldHenV2.3</button>
