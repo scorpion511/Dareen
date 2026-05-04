@@ -1,308 +1,149 @@
 <html manifest="Cache.manifest">
 <head>
+<meta charset="utf-8">
+<title>SCORPION Version 9.00 fw</title>
 <style>
-	 html, body {
+    html, body {
         margin: auto;
         font-family: sans-serif;
         font-size: 20px;
         font-weight: lighter;
         text-align: center;
         color: #FFFFFF;
-        background-image: url("scorpion2.png");
+        /* Changed to bgg.jpg as requested */
+        background: url("bgg.jpg") #000000 no-repeat center center fixed;
         background-size: cover;
-        background-attachment: fixed;
-        background-position: center;
         overflow: hidden;
     }
 
-@keyframes shake {
-  0% { transform: translate(1px, 1px) rotate(0deg); }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  30% { transform: translate(3px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(3px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
-}
+    /* Fire and Frost Dual Glow Title */
+    .fire-frost {
+        font-size: 50px;
+        font-weight: 900;
+        text-transform: uppercase;
+        text-align: center;
+        margin-top: 30px;
+        letter-spacing: 3px;
+        color: #fff;
+        text-shadow: 0 0 10px #ff0000, 0 0 20px #ff8000, 0 0 30px #00ffff, 0 0 40px #00ffff;
+        animation: firefrost-flicker 2s infinite alternate;
+        -webkit-animation: firefrost-flicker 2s infinite alternate;
+    }
 
-/* The Glow and Shake Class */
-.glow-shake {
-    display: inline-block;
-    color: #ffd700; /* I changed this to GOLD, change it to whatever you like! */
-    text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 4px 4px 4px black;
-    animation: shake 0.5s infinite;
-}
+    /* Original Logo Container with Gold Spin Effect */
+    .logo-container {
+        position: fixed;
+        top: 80px; /* Adjusted to not cover date */
+        left: 20px;
+        width: 120px;
+        height: 120px;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-/* --- PASTE THIS NEW LOGO CODE BELOW --- */
+    .top-left-logo {
+        width: 100px;
+        z-index: 10001;
+        filter: drop-shadow(0 0 10px white);
+        animation: logoPulse 2s infinite ease-in-out;
+    }
 
-.top-left-logo {
-    position: fixed;
-    top: 20px;
-    left: 20px;       /* Changed from right to left */
-    width: 150px;      /* Increased from 100px to 150px */
-    z-index: 9999;
-    filter: drop-shadow(0 0 15px white);
-    animation: logoPulse 2s infinite ease-in-out;
-}
+    .logo-container::before {
+        content: "";
+        position: absolute;
+        width: 110px;
+        height: 110px;
+        border: 3px solid transparent;
+        border-top: 3px solid #ffd700; 
+        border-right: 3px solid #ffd700;
+        border-radius: 50%;
+        animation: spin-light 1.5s linear infinite;
+        box-shadow: 0 0 15px #ffd700;
+    }
 
+    /* Square Bottom Middle Box */
+    .content-box {
+        background: rgba(0, 0, 0, 0.85); 
+        width: 55%; 
+        max-width: 650px; 
+        margin: 0 auto;
+        padding: 25px 20px;
+        border-radius: 30px;
+        border: 2px solid #00ffff;
+        box-shadow: 0 0 25px #00ffff;
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        text-align: center;
+    }
 
-@keyframes logoPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-}
+    /* Name Styles */
+    .hue {
+        color: white; font-size: 28px; padding: 5px 25px;
+        background: rgba(0, 255, 255, 0.2); border-radius: 12px;
+        box-shadow: 0 0 20px #00ffff; display: inline-block;
+        margin-bottom: 10px;
+        animation: hue-cycle 5s linear infinite;
+        -webkit-animation: hue-cycle 5s linear infinite;
+    }
 
-/* --- END OF NEW LOGO CODE --- */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-	/* Container for the logo to hold the light effect */
-.logo-container {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    width: 150px; /* Bigger size */
-    height: 150px;
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    .fire-red {
+        color: white; font-size: 28px; padding: 5px 20px;
+        background: rgba(255, 0, 0, 0.2); border-radius: 12px;
+        box-shadow: 0 0 20px #ff0000; display: inline-block;
+        margin-bottom: 15px;
+        animation: red-flicker 1.5s infinite alternate;
+        -webkit-animation: red-flicker 1.5s infinite alternate;
+    }
 
-/* The actual Logo */
-.top-left-logo {
-    width: 130px; /* alittle smaller than container */
-    z-index: 10001;
-    filter: drop-shadow(0 0 10px white);
-}
-.logo-container::before {
-    content: "";
-    position: absolute;
-    width: 140px;
-    height: 140px;
-    border: 3px solid transparent;
-    border-top: 3px solid #ffd700; /* Gold light */
-    border-right: 3px solid #ffd700;
-    border-radius: 50%;
-    animation: spin-light 1.5s linear infinite;
-    box-shadow: 0 0 15px #ffd700;
-}
+    .super-glow {
+        font-size: 34px; font-weight: bold; display: inline-block;
+        animation: rainbow-glow 3s linear infinite;
+        -webkit-animation: rainbow-glow 3s linear infinite;
+    }
 
-@keyframes spin-light {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
+    .yellow-label { color: yellow; font-weight: bold; font-size: 20px; display: block; margin-bottom: 8px; }
 
-@keyframes logoPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-}
+    /* Button Styling */
+    button {
+        background: rgba(0,0,0,0.5);
+        box-shadow: 0 5px 20px 0 white;
+        border: 2px solid black;
+        border-radius: 10px;
+        width: 200px;
+        height: 43px;            
+        text-align: center;
+        color: white;
+    }
 
- .content {
-  width:90%;
-  height:15%;
-  margin-left:3.5%;
-  background:rgba(0,0,0,0.5);
-  color:white;
-  margin-top:0%;
-  font-size:25px;
-  text-align:center;
-  border-radius:30px;
-  padding:20px;
-  line-height:12px;
-  position:absolute;bottom:0px;
- }
- .title {
-  font-size:40px;
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-weight:bolder;
-  margin-bottom:10px;
- }
- .yellow {
-  color:yellow;
- }
- .hue {
-  color:yellow;
-  padding:10px;
-  border-radius:10px;
-  animation:hue 5s linear infinite;
-  -webkit-animation: hue 5s linear infinite;
-  box-shadow: 0px 0px 50px yellow;
-  color:white;
-  background:rgba(255,255,0,0.4);
- }
- .hue:hover{
-  color:yellow;
-  background:transparent;
- }
- @keyframes hue{
- 0%{
- filter:hue-rotate(0deg);
- -webkit-filter:hue-rotate(0deg);
- }
- 10%{
- box-shadow: 0px 1px 50px yellow;
- }
- 20%{
- box-shadow: 1px 1px 50px yellow;
- }
- 30%{
- box-shadow: 1px 0px 50px yellow;
- }
- 40%{
-  box-shadow: 1px -1px 50px yellow;
- }
- 50%{
- box-shadow: 0px -1px 50px yellow;
- }
- 60%{
- box-shadow: -1px -1px 50px yellow;
- }
- 70%{
- box-shadow: -1px 0px 50px yellow;
- }
- 80%{
- box-shadow: -1px 1px 50px yellow;
- }
- 90%{
- box-shadow: 0px 1px 50px yellow;
- }
- 100%{
- filter:hue-rotate(360deg);
- -webkit-filter:hue-rotate(360deg);
- }
- }
- .text {
-  padding-bottom:50px;
- }
-  .back {
-   font-size:25px;
-   margin-top:10px;
-   display:block;
-   line-height:55px;
-   width:20%;
-   text-decoration:none;
-   height:50px;
-   background:white;
-   color:black;
-   border-radius:15px;
-  }
-  .back:hover{
-   border:2px solid white;
-   background:transparent;
-   box-sizing:border-box;
-   color:white;
-  }
- #psip {
-  text-align: center;
-  margin-left: 38%;
-  margin-right: auto;
-  width:15%;
-  display:flex;
-  position: absolute;
-  
-  background: rgba(0, 0, 0, 0.500);
-  border-radius: 2em;
-  border: none;
-  padding: 0.8em;
-  
-  color: #ffffff;
-  padding-left: 1.5em;
-  
-  outline: none;
-  box-shadow: 0 4px 6px -5px hsl(0, 0%, 40%), inset 0px 4px 6px -5px hsl(0, 0%, 2%);
-  backdrop-filter: blur(5px);
-}
-/* Modal Content */
-.modal-content {
-  font-family: BFARNAZ;
-  font-size: 18px;
-  position: relative;
-  background-color: #dddddd;
-  margin: auto;
-  padding: 0;
-  border: 1px solid #888;
-  width: 50%;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-  -webkit-animation-name: animatetop;
-  -webkit-animation-duration: 0.4s;
-  animation-name: animatetop;
-  animation-duration: 0.4s
-}
-button {
-            background:rgba(0,0,0,0.5);
-			box-shadow: 0 5px 20px 0 white;
-            border: 2px solid black;
-            border-radius: 10px;
-            width: 200px;
-            height: 43px;            
-            text-align: center;
-}
-button:hover {
-            box-shadow: 0 5px 50px 0 white;
-            color: white;
-            border-radius: 10px;
-			background-color: #0F0F53;
-}
+    button:hover {
+        box-shadow: 0 5px 50px 0 #00ffff;
+        background-color: #0F0F53;
+        border-color: #00ffff;
+    }
 
-hr {
-padding:0;
-margin:0;
-opacity:0.7;
-}
+    /* Animations */
+    @keyframes spin-light { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes logoPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+    @keyframes firefrost-flicker {
+        0% { text-shadow: 0 0 10px #ff0000, 0 0 20px #ff8000, 0 0 30px #00ffff; }
+        100% { text-shadow: 0 0 15px #ff4e00, 0 0 30px #ffea00, 0 0 45px #00ffff; }
+    }
+    @keyframes red-flicker {
+        0% { text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000; -webkit-transform: scale(1); }
+        100% { text-shadow: 0 0 20px #ff0000, 0 0 40px #ff4e00; -webkit-transform: scale(1.05); }
+    }
+    @keyframes hue-cycle { 0% { -webkit-filter: hue-rotate(0deg); } 100% { -webkit-filter: hue-rotate(360deg); } }
+    @keyframes rainbow-glow { 0% { text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff; filter: hue-rotate(0deg); } 100% { text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff; filter: hue-rotate(360deg); } }
 
-#progress {
- font-weight:bold;
- text-shadow: 4px 4px 4px black;
-
- font-size:17px;
-}
-.pointer {cursor: pointer;}
-
-h1 {
-text-shadow: 0.1em 0.1em 0.2em black;
-font-size: 25px;
-text-align: center;
-color: white;
-}
-
-.TextCaption{
-display: block;
-    font-size: 20px;
-    color: #fff;
-    text-decoration: none;
-}
-
-a img {
-    display: inline-block;  text-decoration: none;
-}
-
-a {
-    display: inline-block;  text-decoration: none;
-}
-
-a:hover img, a:hover .TextCaption{
-transform: scale(1.1)
-}
-
-    </style>
-<meta charset="utf-8">
-<title>SCORPION Version 9.00 fw</title>
+    #clock { float:right; margin-right:2.25%; margin-top: 18px; font-weight:bold; font-size:28px; color: white; }
+    #date { float:left; margin-left:1.25%; font-weight:bold; margin-top: 18px; font-size:28px; color: white; }
+    .pointer {cursor: pointer;}
+</style>
 <script>
 if (window.applicationCache.status=='0'){window.location.replace("cache.html");}
 </script>
