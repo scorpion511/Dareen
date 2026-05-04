@@ -12,45 +12,51 @@
         overflow: hidden;
     }
 
-    /* Fixed Blackfire Title - Brighter for dark backgrounds */
-    .blackfire {
+    /* Yellow Glowing Header */
+    .yellow-glow {
         font-size: 55px;
         font-weight: 900;
-        color: #ff3333; /* Brighter red core so it's visible */
+        color: #ffff00; 
         text-transform: uppercase;
-        margin-top: 30px;
+        margin-top: 20px;
         letter-spacing: 4px;
-        text-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000, 4px 4px 10px #000;
+        text-shadow: 0 0 15px #ffff00, 0 0 30px #ffcc00, 4px 4px 10px #000;
         animation: flicker 2s infinite alternate;
         -webkit-animation: flicker 2s infinite alternate;
     }
 
-    /* Main Status Text */
     h1.status {
-        color: yellow;
+        color: #ffffff;
         text-shadow: 4px 4px 5px #000;
-        font-size: 28px;
-        margin-top: 10px;
+        font-size: 25px;
+        margin-top: 5px;
     }
 
     #progress {
-        font-size: 25px;
+        font-size: 24px;
+        color: white;
         text-shadow: 3px 3px 5px #000;
         margin-top: 10px;
     }
 
-    /* Fixed Content Box - No more overlapping */
+    /* Bottom Middle Box */
     .content-box {
-        background: rgba(0, 0, 0, 0.85); /* Darker for readability */
+        background: rgba(0, 0, 0, 0.85); 
         width: 85%;
-        margin: 50px auto 0 auto;
-        padding: 30px;
+        margin: 0 auto;
+        padding: 20px;
         border-radius: 20px;
-        border: 2px solid #ff0000;
-        box-shadow: 0 0 20px #ff0000;
+        border: 2px solid #ffff00;
+        box-shadow: 0 0 20px #ffff00;
+        /* Positioned at the bottom */
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
     }
 
-    .yellow { color: yellow; font-weight: bold; }
+    .yellow-label { color: yellow; font-weight: bold; font-size: 22px; }
 
     /* Scorpio Hue Glow */
     .hue {
@@ -67,15 +73,15 @@
     .super-glow {
         font-size: 38px;
         font-weight: bold;
-        display: block;
-        margin-top: 15px;
+        display: inline-block;
+        margin-top: 10px;
         animation: rainbow-glow 3s linear infinite;
         -webkit-animation: rainbow-glow 3s linear infinite;
     }
 
     @keyframes flicker {
-        0%, 100% { opacity: 1; transform: scale(1); }
-        50% { opacity: 0.8; transform: scale(1.02); }
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.8; text-shadow: 0 0 20px #ffff00, 0 0 40px #ffcc00; }
     }
 
     @keyframes hue-cycle {
@@ -84,14 +90,14 @@
     }
 
     @keyframes rainbow-glow {
-        0% { text-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000; filter: hue-rotate(0deg); }
-        100% { text-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000; filter: hue-rotate(360deg); }
+        0% { text-shadow: 0 0 20px #ffff00, 0 0 40px #ffcc00; filter: hue-rotate(0deg); }
+        100% { text-shadow: 0 0 20px #ffff00, 0 0 40px #ffcc00; filter: hue-rotate(360deg); }
     }
 </style>
 </head>
 
 <body>
-    <div class="blackfire">Welcome to Scorpion Hack</div>
+    <div class="yellow-glow">Welcome to Scorpion Hack</div>
     
     <h1 class="status">Scorpio Host Auto Exploit - 9.00 FW</h1>
     
@@ -100,19 +106,20 @@
     </h1>
 
     <div class="content-box">
-        <span class="yellow">Designed, Compiled by :</span>&nbsp;&nbsp; 
+        <span class="yellow-label">Designed, Compiled by :</span>&nbsp;&nbsp; 
         <span class="hue">Scorpio</span>
         
         <br><br>
         
-        <span class="yellow" style="font-size: 25px;">Super Special Thanks To :</span>
+        <span class="yellow-label">Super Special Thanks To :</span>
+        <br>
         <span class="super-glow">Dareen & Omar & jojo</span>
     </div>
 
     <script>
         function goldhen(){
             progress.innerHTML = "loading... please wait - <span style='color:#00d4ff; text-shadow: 0 0 10px #fff;'>I love you Didi&Miro&jojo</span>";
-            // ... rest of your goldhen logic
+            // ... rest of your original jailbreak/goldhen script logic goes here
         }
     </script>
 </body>
