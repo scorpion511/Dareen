@@ -82,52 +82,66 @@
     }
 
     /* Square Bottom Middle Box */
-    .content-box {
+    /* Thin Bottom Bar matching your image */
+.content-box {
     background: rgba(0, 0, 0, 0.85); 
-    width: 50%;
-    max-width: 600px;
-    padding: 20px;
-    border-radius: 30px;
+    width: 90%; /* Wide bar as seen in image */
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 15px 30px; /* Thinner padding */
+    border-radius: 20px;
     border: 2px solid #00ffff;
-    box-shadow: 0 0 25px #00ffff;
+    box-shadow: 0 0 20px #00ffff;
     
-    /* This moves it to the bottom middle */
     position: absolute;
-    bottom: 20px;   /* Distance from the bottom edge */
-    left: 50%;      /* Move to middle */
-    transform: translateX(-50%); /* Perfectly center it */
-    -webkit-transform: translateX(-50%); /* Support for PS4 browser */
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
     
-    text-align: center;
-    z-index: 10;
+    text-align: left; /* Aligned left like the image */
 }
 
-    /* Name Styles */
-    .hue {
-        color: white; font-size: 28px; padding: 5px 25px;
-        background: rgba(0, 255, 255, 0.2); border-radius: 12px;
-        box-shadow: 0 0 20px #00ffff; display: inline-block;
-        margin-bottom: 10px;
-        animation: hue-cycle 5s linear infinite;
-        -webkit-animation: hue-cycle 5s linear infinite;
-    }
+.yellow-label { 
+    color: yellow; 
+    font-weight: bold; 
+    font-size: 18px; 
+    display: inline-block; /* Keep on same line */
+    width: 220px; /* Fixed width to align names */
+}
 
-    .fire-red {
-        color: white; font-size: 28px; padding: 5px 20px;
-        background: rgba(255, 0, 0, 0.2); border-radius: 12px;
-        box-shadow: 0 0 20px #ff0000; display: inline-block;
-        margin-bottom: 15px;
-        animation: red-flicker 1.5s infinite alternate;
-        -webkit-animation: red-flicker 1.5s infinite alternate;
-    }
+/* Scorpio Tag matching the image */
+.hue {
+    color: white;
+    font-size: 22px;
+    padding: 2px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #777;
+    border-radius: 15px;
+    display: inline-block;
+    box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    animation: hue-cycle 5s linear infinite;
+}
 
-    .super-glow {
-        font-size: 34px; font-weight: bold; display: inline-block;
-        animation: rainbow-glow 3s linear infinite;
-        -webkit-animation: rainbow-glow 3s linear infinite;
-    }
+/* Red Ahmed Tag (Hidden/Small in your specific image ref) */
+.fire-red {
+    color: white;
+    font-size: 22px;
+    margin-left: 225px; /* Aligns under Scorpio */
+    display: block;
+    margin-top: 5px;
+    text-shadow: 0 0 10px red;
+}
 
-    .yellow-label { color: yellow; font-weight: bold; font-size: 20px; display: block; margin-bottom: 8px; }
+/* Thanks names shifted left like the image */
+.super-glow {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    margin-left: 60px; /* Indented like the image */
+    text-shadow: 0 0 15px white, 0 0 25px #ffcc00;
+    animation: rainbow-glow 3s linear infinite;
+}
 
     /* Button Styling */
     button {
@@ -1145,16 +1159,18 @@ bzip2.decompress = function(bits, size, len) {
 };
 </script>
 	<div class="content-box">
-    <span class="yellow-label">Designed, Compiled by :</span>
-    <span class="hue">Scorpio</span>
-    <br> <!-- Moves Ahmed to the next line -->
+    <div>
+        <span class="yellow-label">Designed, Compiled by :</span>
+        <span class="hue">Scorpio</span>
+    </div>
+    
     <span class="fire-red">Ahmed ESSAM</span>
     
-    <div style="margin: 20px auto; width: 50%; border-top: 1px solid rgba(0,255,255,0.3);"></div>
-    
-    <span class="yellow-label">Super Special Thanks To :</span>
-    <br>
-    <span class="super-glow">Dareen & Omar & jojo</span>
+    <div style="margin-top: 10px;">
+        <span class="yellow-label">Super Special Thanks To :</span>
+        <br>
+        <span class="super-glow">Dareen & Omar & jojo</span>
+    </div>
 </div>
 <div class="logo-container">
     <img src="logo.png" class="top-left-logo">
