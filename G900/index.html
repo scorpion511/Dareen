@@ -12,31 +12,33 @@
         overflow: hidden;
     }
 
-    /* Yellow Glowing Header */
-    .yellow-glow {
+    /* Centered Cyan Black Glowing Header */
+    .cyan-glow {
         font-size: 55px;
         font-weight: 900;
-        color: #ffff00; 
+        color: #00ffff; /* Cyan Core */
         text-transform: uppercase;
-        margin-top: 20px;
+        margin-top: 30px;
+        text-align: center; /* Centered top */
         letter-spacing: 4px;
-        text-shadow: 0 0 15px #ffff00, 0 0 30px #ffcc00, 4px 4px 10px #000;
-        animation: flicker 2s infinite alternate;
-        -webkit-animation: flicker 2s infinite alternate;
+        /* Black shadow layers to create the "Black Glow" look */
+        text-shadow: 0 0 10px #000, 0 0 20px #000, 0 0 30px #00ffff, 0 0 40px #00ffff;
+        animation: cyan-flicker 2s infinite alternate;
+        -webkit-animation: cyan-flicker 2s infinite alternate;
     }
 
     h1.status {
         color: #ffffff;
-        text-shadow: 4px 4px 5px #000;
+        text-shadow: 3px 3px 5px #000;
         font-size: 25px;
-        margin-top: 5px;
+        text-align: center;
     }
 
     #progress {
         font-size: 24px;
         color: white;
+        text-align: center;
         text-shadow: 3px 3px 5px #000;
-        margin-top: 10px;
     }
 
     /* Bottom Middle Box */
@@ -44,11 +46,10 @@
         background: rgba(0, 0, 0, 0.85); 
         width: 85%;
         margin: 0 auto;
-        padding: 20px;
+        padding: 25px;
         border-radius: 20px;
-        border: 2px solid #ffff00;
-        box-shadow: 0 0 20px #ffff00;
-        /* Positioned at the bottom */
+        border: 2px solid #00ffff;
+        box-shadow: 0 0 25px #00ffff;
         position: absolute;
         bottom: 20px;
         left: 50%;
@@ -58,30 +59,34 @@
 
     .yellow-label { color: yellow; font-weight: bold; font-size: 22px; }
 
-    /* Scorpio Hue Glow */
+    /* Bigger Scorpio Tag - Moved Right */
     .hue {
         color: white;
-        padding: 5px 15px;
-        background: rgba(255, 255, 0, 0.2);
-        border-radius: 10px;
-        box-shadow: 0 0 15px yellow;
+        font-size: 28px; /* Bigger */
+        padding: 5px 20px;
+        margin-left: 40px; /* Moved alittle bit to the right */
+        background: rgba(0, 255, 255, 0.2);
+        border-radius: 12px;
+        box-shadow: 0 0 20px #00ffff;
+        display: inline-block;
         animation: hue-cycle 5s linear infinite;
         -webkit-animation: hue-cycle 5s linear infinite;
     }
 
-    /* Super Glowing Names */
+    /* Super Glowing Names - Moved Right */
     .super-glow {
         font-size: 38px;
         font-weight: bold;
         display: inline-block;
         margin-top: 10px;
+        margin-left: 60px; /* Moved alittle bit to the right */
         animation: rainbow-glow 3s linear infinite;
         -webkit-animation: rainbow-glow 3s linear infinite;
     }
 
-    @keyframes flicker {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0.8; text-shadow: 0 0 20px #ffff00, 0 0 40px #ffcc00; }
+    @keyframes cyan-flicker {
+        0%, 100% { opacity: 1; text-shadow: 0 0 10px #000, 0 0 30px #00ffff; }
+        50% { opacity: 0.8; text-shadow: 0 0 15px #000, 0 0 50px #00ffff; }
     }
 
     @keyframes hue-cycle {
@@ -90,23 +95,24 @@
     }
 
     @keyframes rainbow-glow {
-        0% { text-shadow: 0 0 20px #ffff00, 0 0 40px #ffcc00; filter: hue-rotate(0deg); }
-        100% { text-shadow: 0 0 20px #ffff00, 0 0 40px #ffcc00; filter: hue-rotate(360deg); }
+        0% { text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff; filter: hue-rotate(0deg); }
+        100% { text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff; filter: hue-rotate(360deg); }
     }
 </style>
 </head>
 
 <body>
-    <div class="yellow-glow">Welcome to Scorpion Hack</div>
+    <!-- Centered Cyan Header -->
+    <div class="cyan-glow">Welcome to Scorpion Hack</div>
     
     <h1 class="status">Scorpio Host Auto Exploit - 9.00 FW</h1>
     
     <h1 id="progress">
-        Jailbreaking.... <span style="color:#ffea00;">Smile Dareen & Omar ALL SET</span>
+        Jailbreaking.... <span style="color:#00ffff;">Smile Dareen & Omar ALL SET</span>
     </h1>
 
     <div class="content-box">
-        <span class="yellow-label">Designed, Compiled by :</span>&nbsp;&nbsp; 
+        <span class="yellow-label">Designed, Compiled by :</span>
         <span class="hue">Scorpio</span>
         
         <br><br>
@@ -119,7 +125,7 @@
     <script>
         function goldhen(){
             progress.innerHTML = "loading... please wait - <span style='color:#00d4ff; text-shadow: 0 0 10px #fff;'>I love you Didi&Miro&jojo</span>";
-            // ... rest of your original jailbreak/goldhen script logic goes here
+            // Payload logic here
         }
     </script>
 </body>
