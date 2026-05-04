@@ -88,6 +88,39 @@ button:hover {
 @keyframes hue-cycle { 0% { -webkit-filter: hue-rotate(0deg); } 100% { -webkit-filter: hue-rotate(360deg); } }
 @keyframes rainbow-glow { 0% { text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff; filter: hue-rotate(0deg); } 100% { text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff; filter: hue-rotate(360deg); } }
 .pointer {cursor: pointer;}
+  /* Fire Square Logo Styling */
+.logo-container {
+    position: fixed; /* Keeps it in the top left corner */
+    top: 15px;
+    left: 15px;
+    width: 100px; /* Control the box size here */
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent square */
+    border: 3px solid #ff4e00; /* Orange core border */
+    border-radius: 10px;
+    /* Layered shadows for the fire glow */
+    box-shadow: 
+        0 0 10px #ff0000, 
+        0 0 20px #ff8000, 
+        inset 0 0 15px #ff4e00;
+    animation: fire-flicker 1.5s infinite alternate;
+    z-index: 100; /* Ensures it stays on top of everything */
+}
+
+.logo.png {
+    max-width: 80%;
+    max-height: 80%;
+    /* Makes the logo itself have a subtle glow */
+    -webkit-filter: drop-shadow(0 0 5px #ffea00);
+}
+
+@keyframes fire-flicker {
+    0% { box-shadow: 0 0 10px #ff0000, 0 0 20px #ff8000, inset 0 0 10px #ff4e00; transform: scale(1); }
+    100% { box-shadow: 0 0 20px #ff4e00, 0 0 40px #ffea00, inset 0 0 20px #ff8000; transform: scale(1.02); }
+}
 </style>
 
 <script>
@@ -112,13 +145,23 @@ function showdate() {
 setInterval(showdate, 1000);
 </script>
 </head>
-
 <body class="bg-darker">
-<div id="container">
-    <span id="date"></span><span id="clock"></span>
-    <div class="fire-frost">Welcome to Scorpion Hack All In 1</div>
-    <h1 id="msgs2" style='font-size:25px;text-align:center;color:white;text-shadow: 2px 2px 4px black;'>Status</h1>
-    <div style="text-align:center" id="MyItems">
+    <!-- Date and Clock at the very top -->
+    <span id="date"></span>
+    <span id="clock"></span>
+
+    <!-- Logo sits safely below the date -->
+    <div class="logo-container">
+        <img src="logo.png" class="logo.png">
+    </div>
+    <div id="container">
+        <!-- Title and Status centered -->
+        <div class="fire-frost">Welcome to Scorpion Hack All In 1</div>
+        <h1 id="msgs2" style='font-size:25px;text-align:center;color:white;text-shadow: 2px 2px 4px black;'>Status</h1>
+        
+        <div style="text-align:center" id="MyItems">
+            <!-- Your buttons go here -->
+
 <a href="copych/index.html"><button style='width: 200px;height: 40px;font-size:22px;text-align:center;color:yellow' class="pointer" onMouseOver="msgs2.innerHTML='Copy Cheat For 505 & 672 & 702 & 755 & 900'"; onmouseout="msgs2.innerHTML='Status'"  type="button"><B>Copy Cheat </B></button></a>
 <a href="https://karo218.ir/espweb/index.html"><button style='width: 200px;height: 40px;font-size:22px;text-align:center;color:green' class="pointer" onMouseOver="msgs2.innerHTML='SCORPION WEB ESP For 505 & 672 & 702 & 755 & 900'"; onmouseout="msgs2.innerHTML='Status'"  type="button"><B>WEB ESP </B></button></a>
 <a href="binloader/index.html"><button style='width: 200px;height: 40px;font-size:22px;text-align:center;color:yellow' class="pointer" onMouseOver="msgs2.innerHTML='Binloader For 505 & 672 & 702 & 755 & 900'"; onmouseout="msgs2.innerHTML='Status'"  type="button"><B>Binloader </B></button></a><br>
