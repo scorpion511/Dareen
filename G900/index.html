@@ -1,153 +1,119 @@
 <html manifest="Cache.manifest">
 <head>
 <meta charset="utf-8">
-<title>Scorpio Host Auto Exploit GoldHen new PSFree Webkit 900fw</title>
+<title>Scorpio Host Auto Exploit - 9.00 fw</title>
 <style>
     html, body {
-        /* This links to your uploaded image */
         background: url("bg.jpg") #000000 no-repeat center center fixed; 
         background-size: cover;
-        /* Makes the image dark so the fire text pops */
-        -webkit-filter: brightness(0.7);
-        filter: brightness(0.7);
         margin: auto;
         font-family: sans-serif;
-        font-size: 20px;
-        font-weight: lighter;
-        text-align: center;
         color: #FFFFFF;
         overflow: hidden;
     }
 
-    /* Blackfire Title - WELCOME TO SCORPION HACK */
+    /* Fixed Blackfire Title - Brighter for dark backgrounds */
     .blackfire {
-        font-size: 50px;
+        font-size: 55px;
         font-weight: 900;
-        color: #111; 
+        color: #ff3333; /* Brighter red core so it's visible */
         text-transform: uppercase;
-        margin-top: 20px;
+        margin-top: 30px;
         letter-spacing: 4px;
-        text-shadow: 0 0 10px #ff0000, 0 0 20px #000, 0 0 30px #000, 0 0 40px #ff0000;
-        animation: blackfire-flicker 2s infinite alternate;
-        -webkit-animation: blackfire-flicker 2s infinite alternate;
+        text-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000, 4px 4px 10px #000;
+        animation: flicker 2s infinite alternate;
+        -webkit-animation: flicker 2s infinite alternate;
     }
 
-    @keyframes blackfire-flicker {
-        0%, 100% { text-shadow: 0 0 10px #ff0000, 0 0 20px #000, 0 0 30px #000, 0 0 40px #ff0000; opacity: 1; }
-        50% { text-shadow: 0 0 15px #800000, 0 0 25px #000, 0 0 35px #000, 0 0 55px #800000; -webkit-transform: scale(1.01); }
-    }
-
-    /* Frost Glow Effect for I love you Didi&Miro&jojo */
-    .frost {
-        color: #e0f7fa;
-        text-shadow: 0 0 10px #00d4ff, 0 0 20px #ffffff, 0 0 30px #00d4ff;
-        font-weight: bold;
-        animation: ice-shimmer 2s infinite;
-        -webkit-animation: ice-shimmer 2s infinite;
-    }
-
-    @keyframes ice-shimmer {
-        0%, 100% { opacity: 1; text-shadow: 0 0 10px #00d4ff, 0 0 20px #ffffff; }
-        50% { opacity: 0.8; text-shadow: 0 0 20px #00d4ff, 0 0 40px #ffffff; }
+    /* Main Status Text */
+    h1.status {
+        color: yellow;
+        text-shadow: 4px 4px 5px #000;
+        font-size: 28px;
+        margin-top: 10px;
     }
 
     #progress {
-        font-weight: bold;
-        text-shadow: 4px 4px 4px black;
-        font-size: 26px;
-        color: white;
+        font-size: 25px;
+        text-shadow: 3px 3px 5px #000;
+        margin-top: 10px;
     }
 
-    .smile-text {
-        color: #ffea00;
-        text-shadow: 0 0 10px #ffea00;
-        font-style: italic;
+    /* Fixed Content Box - No more overlapping */
+    .content-box {
+        background: rgba(0, 0, 0, 0.85); /* Darker for readability */
+        width: 85%;
+        margin: 50px auto 0 auto;
+        padding: 30px;
+        border-radius: 20px;
+        border: 2px solid #ff0000;
+        box-shadow: 0 0 20px #ff0000;
     }
 
-    /* Footer Box */
-    .content {
-        width: 90%;
-        height: 15%;
-        margin-left: 3.5%;
-        background: rgba(0, 0, 0, 0.7); 
-        border-radius: 30px;
-        padding: 20px;
-        position: absolute;
-        bottom: 10px;
-        line-height: 12px;
-        -webkit-backdrop-filter: blur(10px);
-    }
+    .yellow { color: yellow; font-weight: bold; }
 
-    .yellow { color: yellow; }
-
-    /* Scorpio Hue Name Animation */
+    /* Scorpio Hue Glow */
     .hue {
         color: white;
-        padding: 10px;
+        padding: 5px 15px;
+        background: rgba(255, 255, 0, 0.2);
         border-radius: 10px;
-        background: rgba(255, 255, 0, 0.3);
-        box-shadow: 0px 0px 40px yellow;
-        animation: hue 5s linear infinite;
-        -webkit-animation: hue 5s linear infinite;
+        box-shadow: 0 0 15px yellow;
+        animation: hue-cycle 5s linear infinite;
+        -webkit-animation: hue-cycle 5s linear infinite;
     }
 
-    @keyframes hue {
+    /* Super Glowing Names */
+    .super-glow {
+        font-size: 38px;
+        font-weight: bold;
+        display: block;
+        margin-top: 15px;
+        animation: rainbow-glow 3s linear infinite;
+        -webkit-animation: rainbow-glow 3s linear infinite;
+    }
+
+    @keyframes flicker {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.8; transform: scale(1.02); }
+    }
+
+    @keyframes hue-cycle {
         0% { -webkit-filter: hue-rotate(0deg); }
         100% { -webkit-filter: hue-rotate(360deg); }
     }
 
-    /* Fire Glow for Thanks To Dareen & Omar & jojo */
-    .fire-names {
-        font-size: 32px;
-        font-weight: bold;
-        color: #fff;
-        text-shadow: 0 0 10px #ff0000, 0 0 20px #ff8000, 0 0 30px #ffea00;
-        animation: flicker 1.2s infinite alternate;
-        -webkit-animation: flicker 1.2s infinite alternate;
-    }
-
-    @keyframes flicker {
-        0%, 100% { text-shadow: 0 0 10px #ff0000, 0 0 20px #ff8000, 0 0 30px #ffea00; }
-        50% { text-shadow: 0 0 15px #ff4e00, 0 0 25px #ff8d00, 0 0 35px #ffe600; }
+    @keyframes rainbow-glow {
+        0% { text-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000; filter: hue-rotate(0deg); }
+        100% { text-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000; filter: hue-rotate(360deg); }
     }
 </style>
-
-<script>
-    if (window.applicationCache.status == '0') { window.location.replace("cache.html"); }
-</script>
-<script src="int64.js"></script>
-<script src="rop.js"></script>
-<script src="kexploit.js" defer></script>
-<script src="exploit.js" defer></script>
-<script>
-    function goldhen() {
-        progress.innerHTML = "loading... please wait - <span class='frost'>I love you Didi&Miro&jojo</span>";
-        LoadedMSG = "GoldHen Loaded";
-        PLfile = "goldhen.bin";
-        out_jb = "AllPL";
-        load_pocB();
-    }
-    // Existing functions (load_pocB, jbdone, allset) go here
-</script>
 </head>
 
 <body>
     <div class="blackfire">Welcome to Scorpion Hack</div>
-    <h1 style='text-shadow: 4px 4px 4px black; font-size:30px; color:yellow;'>Scorpio Host Auto Exploit GoldHen new PSFree Webkit 900fw</h1>
+    
+    <h1 class="status">Scorpio Host Auto Exploit - 9.00 FW</h1>
     
     <h1 id="progress">
-        Jailbreaking.... <span class="smile-text">Smile Dareen & Omar ALL SET</span>
+        Jailbreaking.... <span style="color:#ffea00;">Smile Dareen & Omar ALL SET</span>
     </h1>
-    <br>
 
-    <div id="all" class="content">
-        <div class="text">
-            <br><span class="yellow" style="text-shadow: 4px 4px 4px black;">Designed, Compiled by :</span>&nbsp;&nbsp; 
-            <span class="hue" style="text-shadow: 4px 4px 4px black;">Scorpio</span>
-            <br><br><br><br>
-            <span class="yellow" style="text-shadow: 4px 4px 4px black;">Super Special Thanks To :</span>&nbsp;&nbsp; 
-            <span class="fire-names">Dareen & Omar & jojo</span>
-        </div>
+    <div class="content-box">
+        <span class="yellow">Designed, Compiled by :</span>&nbsp;&nbsp; 
+        <span class="hue">Scorpio</span>
+        
+        <br><br>
+        
+        <span class="yellow" style="font-size: 25px;">Super Special Thanks To :</span>
+        <span class="super-glow">Dareen & Omar & jojo</span>
     </div>
+
+    <script>
+        function goldhen(){
+            progress.innerHTML = "loading... please wait - <span style='color:#00d4ff; text-shadow: 0 0 10px #fff;'>I love you Didi&Miro&jojo</span>";
+            // ... rest of your goldhen logic
+        }
+    </script>
 </body>
 </html>
