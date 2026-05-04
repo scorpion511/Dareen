@@ -1,5 +1,6 @@
 <html manifest="Cache.manifest">
 <head>
+<meta charset="utf-8">
 <title>Scorpio Host Auto Exploit - 9.00 fw</title>
 <style>
     html, body {
@@ -7,82 +8,83 @@
         background-size: cover;
         margin: auto;
         font-family: sans-serif;
-        font-size: 20px;
-        font-weight: lighter;
         text-align: center;
         color: #FFFFFF;
         overflow: hidden;
     }
 
-    /* Blackfire Title */
-    .blackfire {
+    /* Fire and Frost Header */
+    .fire-frost {
         font-size: 50px;
         font-weight: 900;
-        color: #111; 
         text-transform: uppercase;
         margin-top: 20px;
-        letter-spacing: 4px;
-        text-shadow: 0 0 10px #ff0000, 0 0 20px #000, 0 0 30px #000, 0 0 40px #ff0000;
-        animation: blackfire-flicker 2s infinite alternate;
-        -webkit-animation: blackfire-flicker 2s infinite alternate;
+        letter-spacing: 3px;
+        color: #fff;
+        text-shadow: 0 0 10px #ff0000, 0 0 20px #ff8000, 0 0 30px #00ffff, 0 0 40px #00ffff;
+        animation: firefrost-flicker 2s infinite alternate;
+        -webkit-animation: firefrost-flicker 2s infinite alternate;
     }
 
-    @keyframes blackfire-flicker {
-        0%, 100% { text-shadow: 0 0 10px #ff0000, 0 0 20px #000, 0 0 30px #000, 0 0 40px #ff0000; opacity: 1; }
-        50% { text-shadow: 0 0 15px #800000, 0 0 25px #000, 0 0 35px #000, 0 0 55px #800000; -webkit-transform: scale(1.01); }
-    }
-
-    /* Super Glowing Rainbow Names */
-    .super-glow {
-        font-size: 35px;
-        font-weight: bold;
-        color: white;
-        animation: rainbow-glow 3s linear infinite;
-        -webkit-animation: rainbow-glow 3s linear infinite;
-    }
-
-    @keyframes rainbow-glow {
-        0% { text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000; filter: hue-rotate(0deg); }
-        100% { text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000; filter: hue-rotate(360deg); }
-    }
-
-    #progress {
-        font-weight: bold;
-        text-shadow: 4px 4px 4px black;
-        font-size: 25px;
-        color: white;
-    }
-
-    .content {
-        width: 90%;
-        height: 15%;
-        margin-left: 3.5%;
-        background: rgba(0, 0, 0, 0.7); 
+    /* Square Bottom Middle Box */
+    .content-box {
+        background: rgba(0, 0, 0, 0.85); 
+        width: 55%; 
+        max-width: 650px; 
+        margin: 0 auto;
+        padding: 25px 20px;
         border-radius: 30px;
-        padding: 20px;
+        border: 2px solid #00ffff;
+        box-shadow: 0 0 25px #00ffff;
         position: absolute;
-        bottom: 10px;
-        line-height: 12px;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        text-align: center;
     }
 
-    .yellow { color: yellow; }
+    .yellow-label { color: yellow; font-weight: bold; font-size: 20px; display: block; margin-bottom: 8px; }
 
     .hue {
-        color: white;
-        padding: 10px;
-        border-radius: 10px;
-        background: rgba(255, 255, 0, 0.4);
-        box-shadow: 0px 0px 50px yellow;
+        color: white; font-size: 28px; padding: 5px 25px;
+        background: rgba(0, 255, 255, 0.2); border-radius: 12px;
+        box-shadow: 0 0 20px #00ffff; display: inline-block;
+        margin-bottom: 10px;
         animation: hue-cycle 5s linear infinite;
         -webkit-animation: hue-cycle 5s linear infinite;
     }
 
-    @keyframes hue-cycle {
-        0% { -webkit-filter: hue-rotate(0deg); }
-        100% { -webkit-filter: hue-rotate(360deg); }
+    .fire-red {
+        color: white; font-size: 28px; padding: 5px 20px;
+        background: rgba(255, 0, 0, 0.2); border-radius: 12px;
+        box-shadow: 0 0 20px #ff0000; display: inline-block;
+        margin-bottom: 15px;
+        animation: red-flicker 1.5s infinite alternate;
+        -webkit-animation: red-flicker 1.5s infinite alternate;
     }
+
+    .super-glow {
+        font-size: 34px; font-weight: bold; display: inline-block;
+        animation: rainbow-glow 3s linear infinite;
+        -webkit-animation: rainbow-glow 3s linear infinite;
+    }
+
+    #progress { font-weight: bold; text-shadow: 4px 4px 4px black; font-size: 25px; color: white; }
+
+    @keyframes firefrost-flicker {
+        0% { text-shadow: 0 0 10px #ff0000, 0 0 20px #ff8000, 0 0 30px #00ffff; transform: scale(1); }
+        100% { text-shadow: 0 0 15px #ff4e00, 0 0 30px #ffea00, 0 0 45px #00ffff, 0 0 60px #ffffff; transform: scale(1.02); }
+    }
+
+    @-webkit-keyframes red-flicker {
+        0% { text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000; -webkit-transform: scale(1); }
+        100% { text-shadow: 0 0 20px #ff0000, 0 0 40px #ff4e00; -webkit-transform: scale(1.05); }
+    }
+
+    @keyframes hue-cycle { 0% { -webkit-filter: hue-rotate(0deg); } 100% { -webkit-filter: hue-rotate(360deg); } }
+    @keyframes rainbow-glow { 0% { text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff; filter: hue-rotate(0deg); } 100% { text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff; filter: hue-rotate(360deg); } }
 </style>
-<meta charset="utf-8">
 </head>
 <body>
 <script>
@@ -107,7 +109,7 @@
     window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
 </script>
 
-<div class="blackfire">Welcome to Scorpion Hack</div>
+<div class="fire-frost">Welcome to Scorpion Hack</div>
 
 <h1 style='text-shadow: 4px 4px 4px black; font-size:30px; color:yellow; margin-top:1%;'>
     Scorpio Host - Offline Caching
@@ -115,14 +117,14 @@
 
 <h1 id="progress">Caching... Please Wait</h1>
 
-<div class="content">
-    <div class="text">
-        <br><span class="yellow" style="text-shadow: 4px 4px 4px black;">Designed, Compiled by :</span>&nbsp;&nbsp; 
-        <span class="hue" style="text-shadow: 4px 4px 4px black;">Scorpio</span>
-        <br><br><br><br>
-        <span class="yellow" style="text-shadow: 4px 4px 4px black;">Super Special Thanks To :</span>&nbsp;&nbsp; 
-        <span class="super-glow">Dareen & Omar & jojo</span>
-    </div>
+<div class="content-box">
+    <span class="yellow-label">Designed, Compiled by :</span>
+    <span class="hue">Scorpio</span>
+    <br>
+    <span class="fire-red">Ahmed ESSAM</span>
+    <div style="margin: 15px auto; width: 50%; border-top: 1px solid rgba(0,255,255,0.3);"></div>
+    <span class="yellow-label">Super Special Thanks To :</span>
+    <span class="super-glow">Dareen & Omar & jojo</span>
 </div>
 </body>
 </html>
