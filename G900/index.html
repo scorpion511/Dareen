@@ -16,12 +16,11 @@
     .cyan-glow {
         font-size: 55px;
         font-weight: 900;
-        color: #00ffff; /* Cyan Core */
+        color: #00ffff; 
         text-transform: uppercase;
         margin-top: 30px;
-        text-align: center; /* Centered top */
+        text-align: center;
         letter-spacing: 4px;
-        /* Black shadow layers to create the "Black Glow" look */
         text-shadow: 0 0 10px #000, 0 0 20px #000, 0 0 30px #00ffff, 0 0 40px #00ffff;
         animation: cyan-flicker 2s infinite alternate;
         -webkit-animation: cyan-flicker 2s infinite alternate;
@@ -41,7 +40,7 @@
         text-shadow: 3px 3px 5px #000;
     }
 
-    /* Bottom Middle Box */
+    /* Bottom Middle Box - All Content Centered */
     .content-box {
         background: rgba(0, 0, 0, 0.85); 
         width: 85%;
@@ -55,31 +54,37 @@
         left: 50%;
         transform: translateX(-50%);
         -webkit-transform: translateX(-50%);
+        text-align: center; /* This centers everything inside */
     }
 
-    .yellow-label { color: yellow; font-weight: bold; font-size: 22px; }
+    .yellow-label { 
+        color: yellow; 
+        font-weight: bold; 
+        font-size: 22px; 
+        display: block; /* Puts label on its own line */
+        margin-bottom: 5px;
+    }
 
-    /* Bigger Scorpio Tag - Moved Right */
+    /* Centered Scorpio Tag */
     .hue {
         color: white;
-        font-size: 28px; /* Bigger */
-        padding: 5px 20px;
-        margin-left: 80px; /* Moved alittle bit to the right */
+        font-size: 30px; 
+        padding: 5px 25px;
         background: rgba(0, 255, 255, 0.2);
         border-radius: 12px;
         box-shadow: 0 0 20px #00ffff;
         display: inline-block;
+        margin-bottom: 15px;
         animation: hue-cycle 5s linear infinite;
         -webkit-animation: hue-cycle 5s linear infinite;
     }
 
-    /* Super Glowing Names - Moved Right */
+    /* Centered Super Glowing Names */
     .super-glow {
-        font-size: 38px;
+        font-size: 40px;
         font-weight: bold;
         display: inline-block;
         margin-top: 10px;
-        margin-left: 90px; /* Moved alittle bit to the right */
         animation: rainbow-glow 3s linear infinite;
         -webkit-animation: rainbow-glow 3s linear infinite;
     }
@@ -95,14 +100,13 @@
     }
 
     @keyframes rainbow-glow {
-        0% { text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff; filter: hue-rotate(0deg); }
-        100% { text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff; filter: hue-rotate(360deg); }
+        0% { text-shadow: 0 0 25px #00ffff, 0 0 50px #00ffff; filter: hue-rotate(0deg); }
+        100% { text-shadow: 0 0 25px #00ffff, 0 0 50px #00ffff; filter: hue-rotate(360deg); }
     }
 </style>
 </head>
 
 <body>
-    <!-- Centered Cyan Header -->
     <div class="cyan-glow">Welcome to Scorpion Hack</div>
     
     <h1 class="status">Scorpio Host Auto Exploit - 9.00 FW</h1>
@@ -115,17 +119,16 @@
         <span class="yellow-label">Designed, Compiled by :</span>
         <span class="hue">Scorpio</span>
         
-        <br><br>
+        <div style="margin: 15px 0; border-top: 1px solid rgba(0,255,255,0.2);"></div>
         
         <span class="yellow-label">Super Special Thanks To :</span>
-        <br>
         <span class="super-glow">Dareen & Omar & jojo</span>
     </div>
 
     <script>
         function goldhen(){
-            progress.innerHTML = "loading... please wait - <span style='color:#00d4ff; text-shadow: 0 0 10px #fff;'>I love you Didi&Miro&jojo</span>";
-            // Payload logic here
+            progress.innerHTML = "loading... please wait - <span style='color:#00d4ff; text-shadow: 0 0 15px #fff;'>I love you Didi&Miro&jojo</span>";
+            // Payload logic continues...
         }
     </script>
 </body>
