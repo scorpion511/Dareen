@@ -17,6 +17,7 @@
     }
 
     /* Fire and Frost Dual Glow Title */
+        /* Centered Cyan Glowing Title Fix */
     .fire-frost {
         font-size: 50px;
         font-weight: 900;
@@ -24,8 +25,8 @@
         text-align: center;
         margin-top: 30px;
         letter-spacing: 3px;
-        color: #fff;
-        text-shadow: 0 0 10px #ff0000, 0 0 20px #ff8000, 0 0 30px #00ffff, 0 0 40px #00ffff;
+        color: #00ffff !important; /* Forces Cyan color */
+        text-shadow: 0 0 10px #00ffff, 0 0 20px #000, 0 0 30px #00ffff, 0 0 40px #00ffff;
         animation: firefrost-flicker 2s infinite alternate;
         -webkit-animation: firefrost-flicker 2s infinite alternate;
     }
@@ -830,9 +831,26 @@ Tools.style.display = "none";
 </script>
 </head>
 <body style='background-color:#1A1920'>
-<h1 style='text-shadow: 4px 4px 4px black;font-size:30px;text-align:center;text-shadow: 4px 4px 4px black;color:yellow;margin-top:1%;'>WELCOME TO SCORPION HACK ALL IN 1</h1>
-<h1 id=progress style='font-size:25px;text-align:center;text-shadow: 4px 4px 4px black;color:white;'>Jailbreaking... Wait.. SMILE Dareen&Omar ALL SET</h1>
-<div id=all style="text-align:center;display:none">
+    <!-- Date and Clock -->
+    <span id="date"></span><span id="clock"></span>
+
+    <!-- Logo in Fire Square -->
+    <div class="logo-container">
+        <img src="logo.png" class="top-left-logo">
+    </div>
+
+    <!-- Centered Cyan Title -->
+    <div class="fire-frost" style="color:#00ffff !important; text-align:center;">WELCOME TO SCORPION HACK ALL IN 1</div>
+    
+    <!-- Status Text -->
+    <h1 id="progress" style='font-size:25px;text-align:center;text-shadow: 4px 4px 4px black;color:white;'>
+        Jailbreaking... Wait.. SMILE Dareen&Omar ALL SET
+    </h1>
+
+    <!-- Ensure there is NO <input> tag here to remove the white box -->
+
+    <div id="all" style="text-align:center;">
+        <!-- Your buttons start here -->
 <button id="button-Payload" onMouseOver="progress.innerHTML='GoldHen v2.1.2 by SISTR0 for PS4 9.00 Fw'" onmouseout="progress.innerHTML='Status'" type="button" onclick="goldhen212()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:#CEC52A' > GoldHenV2.1.2</button>
 <button id="button-Payload" onMouseOver="progress.innerHTML='GoldHen v2.2.4 by SISTR0 for PS4 9.00 Fw'" onmouseout="progress.innerHTML='Status'" type="button" onclick="goldhen224()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:#CEC52A' > GoldHenV2.2.4</button>
 <button id="button-Payload" onMouseOver="progress.innerHTML='GoldHen v2.3 by SISTR0 for PS4 9.00 Fw'" onmouseout="progress.innerHTML='Status'" type="button" onclick="goldhen23()" style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:#CEC52A' > GoldHenV2.3</button>
@@ -1180,26 +1198,20 @@ bzip2.decompress = function(bits, size, len) {
   return output;
 };
 </script>
-	<div class="content-box" style="text-align: center; padding: 20px;">
-    <!-- Row 1: Designed by -->
-    <div style="margin-bottom: 10px;">
-        <span class="yellow-label-inline">Designed, Compiled by :</span>
-        <span class="hue">Scorpio</span>
-    </div>
-
-    <!-- Row 2: Ahmed ESSAM Centered -->
-    <div style="display: block; text-align: center;">
-        <span class="fire-red">Ahmed ESSAM</span>
-    </div>
-
-    <div style="margin: 15px auto; width: 60%; border-top: 1px solid rgba(0,255,255,0.2);"></div>
-
-    <!-- Row 3: Thanks with dots on same line -->
-    <div>
-        <span class="yellow-label-inline">Super Special Thanks To :</span>
-        <br>
-        <span class="super-glow">Dareen & Omar & jojo</span>
-    </div>
+	    <div class="content-box" style="text-align: center; padding: 20px;">
+        <div style="margin-bottom: 10px;">
+            <span class="yellow-label-inline">Designed, Compiled by :</span>
+            <span class="hue">Scorpio</span>
+        </div>
+        <div style="display: block; text-align: center;">
+            <span class="fire-red">Ahmed ESSAM</span>
+        </div>
+        <div style="margin: 15px auto; width: 60%; border-top: 1px solid rgba(0,255,255,0.2);"></div>
+        <div>
+            <span class="yellow-label-inline">Super Special Thanks To :</span>
+            <br>
+            <span class="super-glow">Dareen & Omar & jojo</span>
+        </div>
 </div>
 <div class="logo-container">
     <img src="logo.png" class="top-left-logo">
