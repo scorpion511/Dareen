@@ -1,11 +1,13 @@
 CACHE MANIFEST 
 
 CACHE: 
+index.html
 cache.html
-Cache.manifest
+bg.jpg
+bgg.jpg
+logo.png
 exploit.js
 goldhen.bin
-index.html
 int64.js
 kexploit.js
 rop.js
@@ -13,4 +15,4 @@ rop.js
 NETWORK: 
 * 
 
-# 2024-06-16 14:22:30
+# Updated: 2024-06-16 23:15:00 (Scorpio Fix)
