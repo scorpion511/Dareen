@@ -200,6 +200,22 @@
     #clock { float:right; margin-right:2.25%; margin-top: 18px; font-weight:bold; font-size:28px; color: white; }
     #date { float:left; margin-left:1.25%; font-weight:bold; margin-top: 18px; font-size:28px; color: white; }
     .pointer {cursor: pointer;}
+	.footer-box {
+    background: rgba(0, 0, 0, 0.85); 
+    width: 55%;
+    max-width: 650px;
+    padding: 15px;
+    border-radius: 30px;
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 25px #00ffff;
+    position: fixed; 
+    bottom: 20px; 
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    text-align: center;
+    z-index: 1000;
+}
 </style>
 <script>
 if (window.applicationCache.status=='0'){window.location.replace("cache.html");}
@@ -1190,25 +1206,29 @@ bzip2.decompress = function(bits, size, len) {
   return output;
 };
 </script>
-	    <div class="content-box" style="text-align: center; padding: 20px;">
-        <div style="margin-bottom: 10px;">
+	       <!-- This box is now pinned to the bottom where it won't interfere with buttons -->
+    <div class="footer-box">
+        <div style="margin-bottom: 5px;">
             <span class="yellow-label-inline">Designed, Compiled by :</span>
             <span class="hue">Scorpio</span>
         </div>
         <div style="display: block; text-align: center;">
             <span class="fire-red">Ahmed ESSAM</span>
         </div>
-        <div style="margin: 15px auto; width: 60%; border-top: 1px solid rgba(0,255,255,0.2);"></div>
+        
+        <div style="margin: 10px auto; width: 60%; border-top: 1px solid rgba(0,255,255,0.2);"></div>
+        
         <div>
             <span class="yellow-label-inline">Super Special Thanks To :</span>
             <br>
             <span class="super-glow">Dareen & Omar & jojo</span>
         </div>
-</div>
-<div class="logo-container">
-    <img src="logo.png" class="top-left-logo">
-</div>
+    </div>
+
+    <!-- Puts the logo in the top-left fire square -->
+    <div class="logo-container">
+        <img src="logo.png" class="top-left-logo">
+    </div>
 
 </body>
 </html>
-
