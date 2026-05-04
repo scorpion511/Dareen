@@ -90,29 +90,28 @@ button:hover {
 .pointer {cursor: pointer;}
   /* Fire Square Logo Styling */
 .logo-container {
-    position: fixed; /* Keeps it in the top left corner */
-    top: 15px;
-    left: 15px;
-    width: 100px; /* Control the box size here */
-    height: 100px;
+    position: fixed; 
+    top: 60px; /* Sits right under the date */
+    left: 10px;
+    width: 70px;  /* Smaller square */
+    height: 70px; /* Smaller square */
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent square */
-    border: 3px solid #ff4e00; /* Orange core border */
+    background: rgba(0, 0, 0, 0.7); 
+    border: 2px solid #ff4e00;
     border-radius: 10px;
-    /* Layered shadows for the fire glow */
-    box-shadow: 
-        0 0 10px #ff0000, 
-        0 0 20px #ff8000, 
-        inset 0 0 15px #ff4e00;
+    box-shadow: 0 0 10px #ff0000, 0 0 20px #ff8000;
     animation: fire-flicker 1.5s infinite alternate;
-    z-index: 100; /* Ensures it stays on top of everything */
+    -webkit-animation: fire-flicker 1.5s infinite alternate;
+    z-index: 999;
 }
 
-.logo.png {
-    max-width: 80%;
-    max-height: 80%;
+.logo-img {
+    max-width: 85%;
+    max-height: 85%;
+}
+
     /* Makes the logo itself have a subtle glow */
     -webkit-filter: drop-shadow(0 0 5px #ffea00);
 }
@@ -146,18 +145,22 @@ setInterval(showdate, 1000);
 </script>
 </head>
 <body class="bg-darker">
-    <!-- Date and Clock at the very top -->
+    <!-- 1. Top Left Date -->
     <span id="date"></span>
+    
+    <!-- 2. Top Right Clock -->
     <span id="clock"></span>
 
-    <!-- Logo sits safely below the date -->
+    <!-- 3. Logo (Pinned Left, under date) -->
     <div class="logo-container">
-        <img src="logo.png" class="logo.png">
+        <img src="logo.png" class="logo-img">
     </div>
+
     <div id="container">
-        <!-- Title and Status centered -->
+        <!-- 4. Centered Title (Now has plenty of room) -->
         <div class="fire-frost">Welcome to Scorpion Hack All In 1</div>
-        <h1 id="msgs2" style='font-size:25px;text-align:center;color:white;text-shadow: 2px 2px 4px black;'>Status</h1>
+        
+        <h1 id="msgs2" style='font-size:25px;text-align:center;color:white;text-shadow: 2px 2px 4px black; margin-top: 10px;'>Status</h1>
         
         <div style="text-align:center" id="MyItems">
             <!-- Your buttons go here -->
