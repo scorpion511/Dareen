@@ -83,21 +83,24 @@
 
     /* Square Bottom Middle Box */
     .content-box {
-        background: rgba(0, 0, 0, 0.85); 
-        width: 55%; 
-        max-width: 650px; 
-        margin: 0 auto;
-        padding: 25px 20px;
-        border-radius: 30px;
-        border: 2px solid #00ffff;
-        box-shadow: 0 0 25px #00ffff;
-        position: absolute;
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-        -webkit-transform: translateX(-50%);
-        text-align: center;
-    }
+    background: rgba(0, 0, 0, 0.85); 
+    width: 50%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 30px;
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 25px #00ffff;
+    
+    /* This moves it to the bottom middle */
+    position: absolute;
+    bottom: 20px;   /* Distance from the bottom edge */
+    left: 50%;      /* Move to middle */
+    transform: translateX(-50%); /* Perfectly center it */
+    -webkit-transform: translateX(-50%); /* Support for PS4 browser */
+    
+    text-align: center;
+    z-index: 10;
+}
 
     /* Name Styles */
     .hue {
